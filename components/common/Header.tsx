@@ -111,14 +111,14 @@ export default function Header() {
             </button>
           )}
           
-          <button 
+          {/* <button 
             className="md:hidden p-2 text-gray-300 hover:text-white z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -128,9 +128,7 @@ export default function Header() {
           <Link href="#capabilities" className="text-gray-300 hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Capabilities</Link>
           <Link href="#research" className="text-gray-300 hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Research</Link>
           <Link href="#faq" className="text-gray-300 hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>FAQ</Link>
-          <button className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white px-5 py-3 rounded-full text-sm font-medium transition-all mt-2 w-full">
-            Book a Demo
-          </button>
+          
         </div>
       )}
     </header>
