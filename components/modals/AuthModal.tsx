@@ -58,7 +58,7 @@ export default function AuthModal() {
         
         if (data.user) {
         //   alert("Check your email for the confirmation link!");
-            toast("Event has been created.")
+            toast("Check your email for the confirmation link!")
           dispatch(setAuthModalOpen(false));
         }
       } else {
