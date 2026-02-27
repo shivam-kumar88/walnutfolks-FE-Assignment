@@ -46,7 +46,7 @@ export default function AnalyticsDashboard() {
       )}
       
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-white">Call Analytics</h2>
+        <h2 className="text-2xl font-bold text-gray-900">Call Analytics</h2>
 
         {user ? (
           <button

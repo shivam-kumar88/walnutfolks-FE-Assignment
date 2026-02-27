@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+Go to the project directory
+for here /walnutfolks-FE-Assignment
+
+First install all dependecies of the project using command 
+
+```bash
+npm i
+
+#or
+
+npm install
+```
+
+run the project in development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+
+
+run the production server:
+
+```bash
+npm run build
+
+#then
+npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+But alternatively you can reach the deployed website using the link -
+[https://walnutfolks-fe.netlify.app/](https://walnutfolks-fe.netlify.app/) 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+##  Architectural Decisions
 
-To learn more about Next.js, take a look at the following resources:
+Next.js - 16 for frontend Framework
+supabase - for Auth flow and database to save user's call analyttics data 
+Redux Toolkit - for state management 
+Redux-Thunk -  for data fetching from the supabase (In a real-world scenario, TanStack Query/React Query is often more suitable for Supabase data fetching because it simplifies the process with built-in caching and automatic loading state management.)
+shadcn ui -  For ui components like dilogs, toast message etc..
+Rechart - For Chart representaions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## The Data Flow Model
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Auth Flow: User signs up/in → Supabase sets a cookie → Redux authSlice is updated → Header displays user name.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Chart Flow: Dashboard mounts → useEffect dispatches fetchUserChartData → Thunk calls Supabase → Data populates Redux → Recharts animates into view.
+
+Update Flow: User edits in Modal → Hits "Save" → AlertDialog confirms → upsert call to Supabase → Redux state syncs → Toast notification appears.
