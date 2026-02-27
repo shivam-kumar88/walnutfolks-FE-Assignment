@@ -6,6 +6,7 @@ import { getSupabaseBrowserClient } from "@/lib/supabase/browser-client";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { setAuthModalOpen, setUser } from "@/store/authSlice";
+import { Zap } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -75,7 +76,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 z-50">
-            {/* Logo Graphic */}
+            <Zap size={28} className="text-[#8B5CF6]" />
           <span className="text-xl font-medium tracking-tight text-white">WalnutFolks</span>
         </Link>
 

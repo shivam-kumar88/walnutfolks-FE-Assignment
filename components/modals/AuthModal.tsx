@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Eye, EyeOff } from "lucide-react"; // Importing icons for the password toggle
 import { getSupabaseBrowserClient } from "@/lib/supabase/browser-client";
+import { toast } from "sonner";
 
 export default function AuthModal() {
   const dispatch = useDispatch();
@@ -56,7 +57,8 @@ export default function AuthModal() {
         }
         
         if (data.user) {
-          alert("Check your email for the confirmation link!");
+        //   alert("Check your email for the confirmation link!");
+            toast("Event has been created.")
           dispatch(setAuthModalOpen(false));
         }
       } else {

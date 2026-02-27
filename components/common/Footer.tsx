@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Zap } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,20 +9,7 @@ export default function Footer() {
         
         {/* Logo Section */}
         <Link href="/" className="flex items-center gap-2">
-          {/* Logo Graphic */}
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Approximated Logo Graphic matching the header */}
-            <circle cx="12" cy="12" r="2.5" fill="#ffffff" />
-            <circle cx="6" cy="12" r="1.5" fill="#ffffff" opacity="0.6" />
-            <circle cx="18" cy="12" r="1.5" fill="#ffffff" opacity="0.6" />
-            <circle cx="12" cy="6" r="1.5" fill="#ffffff" opacity="0.8" />
-            <circle cx="12" cy="18" r="1.5" fill="#ffffff" opacity="0.8" />
-            {/* Corner dots to mimic the diamond shape in your screenshot */}
-            <circle cx="8" cy="8" r="1" fill="#ffffff" opacity="0.5" />
-            <circle cx="16" cy="8" r="1" fill="#ffffff" opacity="0.5" />
-            <circle cx="8" cy="16" r="1" fill="#ffffff" opacity="0.5" />
-            <circle cx="16" cy="16" r="1" fill="#ffffff" opacity="0.5" />
-          </svg>
+            <Zap size={28} className="text-[#8B5CF6]" />
           
           {/* Text Logo */}
           <span className="text-2xl tracking-tight text-white">

@@ -15,6 +15,7 @@ import {
 } from 'recharts';
 import { useState } from 'react';
 import UpdateDataModal from '../modals/UpdateDataModal';
+import { setAuthModalOpen } from '@/store/authSlice';
 
 export default function AnalyticsDashboard() {
     const dispatch = useDispatch<AppDispatch>();
@@ -35,7 +36,7 @@ export default function AnalyticsDashboard() {
     
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-6 space-y-6  ">
+    <div className="w-full max-w-7xl 2xl:max-w-300 mx-auto p-6 space-y-6  ">
 
 
     {isLoading && (
@@ -45,16 +46,25 @@ export default function AnalyticsDashboard() {
       )}
       
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-white">Platform Analytics</h2>
+        <h2 className="text-2xl font-bold text-white">Call Analytics</h2>
 
-        {user && (
+        {user ? (
           <button
             onClick={() => setIsUpdateModalOpen(true)}
             className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-[0_0_15px_rgba(139,92,246,0.2)]"
           >
             Edit Custom Data
           </button>
-        )}
+        )
+        :
+        <button
+            onClick={() => {dispatch(setAuthModalOpen(true))}}
+            className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-[0_0_15px_rgba(139,92,246,0.2)]"
+          >
+            Edit Custom Data
+          </button>
+    
+        }
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

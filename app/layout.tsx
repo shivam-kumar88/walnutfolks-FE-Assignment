@@ -6,6 +6,7 @@ import Footer from "@/components/common/Footer";
 
 import StoreProvider from "@/store/StoreProvider";
 import AuthModal from "@/components/modals/AuthModal";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +44,7 @@ export default function RootLayout({
         </main>
 
         <AuthModal />
-        
+        <Toaster/>
         <Footer />
         </StoreProvider>
       </body>
